@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        .content-box{
+            color: green;
+            background-color: black;
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+        }
+
+        .content-before{
+            font-size: 15px;
+        }
+
+        .content-after{
+            font-size: 10px;
+            display: none;
+            opacity: 0;
+        }
+
+        .btn-decrease{
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="content-box">
+        <p class="content-before">Click to [expand]</p>
+        <p class="content-after">
+            1. Cracking in progress...<br>
+            2. Cracking continues...<br>
+            3. Cracking under pressure...<br>
+            4. Cracking the code...<br>
+            5. Cracking open a mystery...<br>
+            6. Cracking the shell...<br>
+            7. Cracking the case...<br>
+            8. Cracking down on crime...<br>
+            9. Cracking a smile...<br>
+            10. Cracking the whip...</p>
+    </div>
+
+    <button class="btn-decrease">Decrease</button>
+
+    <script>
+        // $("content-after").hide();
+        $(document).ready(function(){
+
+            $(".content-box").click(function(){
+                $(".content-box").animate({
+                    width: '+=60px',
+                    height: '+=100px',
+                }, 3000);
+                $(".content-after").show().animate({opacity: '1'}, 1500);
+            })
+
+            $(".btn-decrease").click(function(){
+                $(".content-box").animate({
+                    width: '-=60px',
+                    height: '-=100px',
+                }, 500);
+                $(".content-after").hide().animate({opacity: '1'}, 3000);
+                // $(".content-box").stop();  // to stop animation
+                // $(".content-box").stop(true);  // stop immediately
+            })
+
+        })
+
+    </script>
+</body>
+</html>

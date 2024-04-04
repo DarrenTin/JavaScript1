@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jquery-3.7.1.js"></script>
+    <style>
+        .info-title {
+            background-color: pink;
+            padding: 2px;
+            width: 300px;
+        }
+        .info-content {
+            background-color: rgb(188, 136, 237);
+            padding: 2px;
+            width: 300px;
+            font-size: 12px;
+        }
+        .info-block {
+            margin: 30px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,6 +37,37 @@
         </ul>
     </nav>
 
+    <div class="info-block">
+        <div class="info-title">
+            <p>Class title</p>
+        </div>
+
+        <div class="info-content">
+            <p>Lorem ipsum dolor sit amet. Et expedita similique et minima odit a harum quaerat non exercitationem quidem 33 dolores pariatur est consequatur vitae aut quasi doloribus.</p>
+        </div>
+    </div>
+
+    <div class="info-block">
+        <div class="info-title">
+            <p>Class title</p>
+        </div>
+
+        <div class="info-content">
+            <p>Lorem ipsum dolor sit amet. Et expedita similique et minima odit a harum quaerat non exercitationem quidem 33 dolores pariatur est consequatur vitae aut quasi doloribus.</p>
+        </div>
+    </div>
+
+    <div class="info-block">
+        <div class="info-title">
+            <p>Class title</p>
+        </div>
+
+        <div class="info-content">
+            <p>Lorem ipsum dolor sit amet. Et expedita similique et minima odit a harum quaerat non exercitationem quidem 33 dolores pariatur est consequatur vitae aut quasi doloribus.</p>
+        </div>
+    </div>
+    
+
     <script>
  
     $(document).ready(function(){ // executed after DOM loaded
@@ -29,8 +76,15 @@
             //     alert("Nav toggled!");
             // });
             // $("#side-nav").fadeTo(1000, 0.5);
-            $("#side-nav").fadeToggle(1000);
+            // $("#side-nav").fadeToggle(1000);
+            $("#side-nav").slideToggle(500);
         })
+    });
+
+    $(document).ready(function(){
+        $(".info-title").click(function(){
+            $(".info-content").slideToggle(1000);
+        });
     });
     </script>
 </body>

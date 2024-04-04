@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <form action="" class="form1">
+        <input type="text" name="uid" placeholder="Username" id="username">
+        <input id="viewPwdLogin" name="pwd" type="password" placeholder="Password">
+        <button onclick="changePwdView()" type="button" id="showhide">View/Hide</button>
+
+        <button type="button" id="btn-login">Login</button>
+    </form>
+</body>
+<script>
+let viewPwdLogin = false;
+
+$("#showhide").hover(changePwdView);
+
+// function changePwdView(){
+//     let getPwdView = document.getElementById("viewPwdLogin");
+//     if(viewPwdLogin === false){
+//         getPwdView.setAttribute("type", "text");
+//         viewPwdLogin = true;
+//     }
+//     else{
+//         getPwdView.setAttribute("type", "password");
+//         viewPwdLogin = false;
+//     }
+// }
+
+function changePwdView(){
+    let getPwdView = $("#viewPwdLogin");
+    if(viewPwdLogin === false){
+        getPwdView.attr("type", "text");
+        viewPwdLogin = true;
+    }
+    else{
+        getPwdView.attr("type", "password");
+        viewPwdLogin = false;
+    }
+}
+
+$(document).ready(function(){
+    $("#btn-login").click(function(){
+        // var $info = $("#username").text() + $("#username").html() + $("#username").input();
+        alert($("#showhide").text() + "\n\n" + $(".form1").html() + "\n\n" + $("#username").val());
+        $("#showhide").text("hide/show"); // change content
+        $(".form1").html("<h1 class='append'>You got hack!</h1>");
+        $(".form1").append("A new parameter");
+        $(".form1").prepend("A pre-pended parameter");
+        $(".form1").after("<h3>A new parameter</h3>");
+    });
+})
+
+</script>
+</html>
